@@ -1,0 +1,57 @@
+---
+title: "Final Project DATA 550"
+author: "Seiryo Sasaki"
+date: "`r Sys.Date()`"
+output: html_document
+---
+```{r, setup, include = FALSE}
+library(knitr)
+library(gtsummary)
+library(gt)
+library(dplyr)
+library(ggplot2)
+library(here)
+```
+
+```{r, data_import, include = FALSE}
+data <- read.csv(here("data", "country_data.csv"), header = TRUE)
+```
+
+# Introduction
+
+This report analyzes a global data set encompassing `r nrow(data)` countries, 
+covering key trends in economics, education, public health, and the environment.
+
+The primary objective is to evaluate regional disparities across critical 
+development indicators, specifically GDP, life expectancy, unemployment, homicide 
+rates, CO2 emissions, and tourism. By identifying these gaps, the report aims to 
+highlight how different geographic areas diverge in their developmental trajectories.
+```{r, subset_data, include = FALSE}
+subset_data <- readRDS(here("output", "subset_data.rds"))
+```
+
+# Table 1
+
+Out of the original `r nrow(data)` countries, any with missing values were excluded.
+This left a final subset of `r nrow(subset_data)` countries with complete data for 
+all variables of interest.
+```{r, table_1}
+table_one <- readRDS(here("output", "table_one.rds"))
+table_one
+```
+
+## Table 1 Description
+
+Oceania reported the highest life expectancy for both males and females, as well
+as the highest GDP per capita. While Africa recorded the highest unemployment rate
+and total population, Asia emerged as the region with the highest population density.
+
+# Graph 1
+```{r, graph_1}
+knitr::include_graphics(here("output", "graph_one.png"))
+```
+
+Africa represents the largest population in the data set, it contains 
+`r nrow(subset_data %>% filter(region_group == "Africa"))` countries. Within the 
+region, the three most populous countries are Nigeria, Ethiopia, and Egypt. The 
+three least populous countries are Botswana, Tunisia, and Benin.
