@@ -1,4 +1,7 @@
-.PHONY: all clean
+.PHONY: all clean install
+
+install:
+	Rscript -e "renv::restore()"
 
 all: output/Final_Project_Data_550.html
 
