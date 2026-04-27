@@ -13,10 +13,8 @@ This project will use renv to manage R packages in renv.lock
 Make sure R is installed with the required packages
 (here, knitr, gtsummary, gt, dplyr, ggplot2).
 
-From the project root directory, run:
-```
-make
-```
+From the project root directory, run: make install then all
+
 The final HTML report will be saved to `output/Final_Project_Data_550.html`.
 
 ## Repository Contents

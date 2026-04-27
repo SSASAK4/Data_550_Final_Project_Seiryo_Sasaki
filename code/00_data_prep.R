@@ -1,12 +1,7 @@
-install.packages("here")
 library(here)
-setwd("/Users/SeiryoSasaki/Desktop/DATA 550/Final Project")
-
-here::set_here()
+library(dplyr)
 
 here::i_am("code/00_data_prep.R")
-
-library(dplyr)
 
 data <- read.csv("data/country_data.csv", header = TRUE)
 

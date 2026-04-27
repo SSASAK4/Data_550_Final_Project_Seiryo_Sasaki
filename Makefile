@@ -22,4 +22,4 @@ output/Final_Project_Data_550.html: Final_Project_Data_550.Rmd output/table_one.
 	Rscript -e "rmarkdown::render('Final_Project_Data_550.Rmd', output_dir = 'output')"
 
 clean:
-	rm -f output/*.rds output/*.png output/*.html
+	rm -f output/*.rds output/*.png output/*.html *html

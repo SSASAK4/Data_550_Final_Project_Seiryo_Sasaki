@@ -1,5 +1,6 @@
 library(gtsummary)
 library(dplyr)
+library(broom)
 library(here)
 
 here::i_am("code/01_table_one.R")
