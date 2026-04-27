@@ -25,7 +25,7 @@ The final HTML report will be saved to `output/Final_Project_Data_550.html`.
 ### Docker Image on DockerHub
 The image is available publicly at: https://hub.docker.com/r/ssasak4/data550_final
 
-Pull the image with: docker pull seiryosasaki/data550-final
+Pull the image with: docker pull ssasak4/data550-final
 
 ### Generating the Report via Docker
 
@@ -42,7 +42,7 @@ The report will be saved to `report/Final_Project_Data_550.html`.
 ---
 
 ## Building the Docker Image
-If you want to build the image yourself instead of pulling from DockerHub: docker build -t seiryosasaki/data550-final .
+If you want to build the image yourself instead of pulling from DockerHub: docker build -t ssasak4/data550-final .
 
 ---
 
