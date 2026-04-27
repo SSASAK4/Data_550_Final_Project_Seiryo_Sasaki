@@ -42,7 +42,7 @@ The report will be saved to `report/Final_Project_Data_550.html`.
 ---
 
 ## Building the Docker Image
-If you want to build the image yourself instead of pulling from DockerHub: docker build -t ssasak4/data550-final .
+If wanting to build the image instead of pulling from DockerHub: docker build -t ssasak4/data550-final .
 
 ---
 
