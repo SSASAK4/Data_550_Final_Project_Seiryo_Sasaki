@@ -31,7 +31,7 @@ Pull the image with: docker pull seiryosasaki/data550-final
 
 The Makefile includes targets that mount a local `report/` folder into the
 container. When the container finishes, the compiled HTML report will appear
-in that folder. **No prerequisites are needed — do not run `make all` first.**
+in that folder.
 
 **Mac/Linux:** make docker_run_mac
 
