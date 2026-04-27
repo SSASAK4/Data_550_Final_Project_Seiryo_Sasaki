@@ -3,7 +3,7 @@ library(dplyr)
 
 here::i_am("code/00_data_prep.R")
 
-data <- read.csv("data/country_data.csv", header = TRUE)
+data <- read.csv(here("data", "country_data.csv"), header = TRUE)
 
 subset_data <- data %>%
   select(name, region, gdp, life_expectancy_male, life_expectancy_female,
@@ -19,4 +19,4 @@ subset_data <- data %>%
     TRUE ~ region
   ))
 
-saveRDS(subset_data, "output/subset_data.rds")
+saveRDS(subset_data, here("output", "subset_data.rds"))

@@ -1,4 +1,4 @@
-.PHONY: all clean install
+.PHONY: all clean install docker_run_mac docker_run_windows
 
 install:
 	Rscript -e "renv::restore()"
@@ -18,8 +18,18 @@ output/graph_one.png: output/subset_data.rds
 	Rscript code/02_graph_one.R
 
 # Step 4: render the report
-output/Final_Project_Data_550.html: Final_Project_Data_550.Rmd output/table_one.rds output/graph_one.png
-	Rscript -e "rmarkdown::render('Final_Project_Data_550.Rmd', output_dir = 'output')"
+output/Final_Project_Data_550.html: Final_Project_DATA_550.Rmd output/table_one.rds output/graph_one.png
+	Rscript -e "rmarkdown::render('Final_Project_DATA_550.Rmd', output_dir = 'output')"
+
+# Docker targets Mac/Linux
+docker_run_mac:
+	mkdir -p report
+	docker run --rm -v "$(shell pwd)/report:/project/report" ssasak4/data550_final
+ 
+# Windows
+docker_run_windows:
+	mkdir -p report
+	docker run --rm -v "/$(shell pwd)/report:/project/report" ssasak4/data550_final
 
 clean:
 	rm -f output/*.rds output/*.png output/*.html *html
